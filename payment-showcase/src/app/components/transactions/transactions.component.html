@@ -1,0 +1,149 @@
+<div class="transactions-container">
+  <div class="transactions-header">
+    <h2>Transaction History</h2>
+    <p class="transactions-subtitle">View all your Changelly transactions</p>
+  </div>
+
+  <!-- Filters Section -->
+  <div class="filters-section">
+    <div class="filters-row">
+      <div class="filter-group">
+        <label for="statusFilter">Status:</label>
+        <select id="statusFilter" [(ngModel)]="statusFilter" (change)="onFilterChange()">
+          <option *ngFor="let option of statusOptions" [value]="option.value">
+            {{ option.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="currencyFilter">Currency:</label>
+        <input 
+          type="text" 
+          id="currencyFilter" 
+          [(ngModel)]="currencyFilter" 
+          (input)="onFilterChange()"
+          placeholder="e.g., USD, EUR"
+        >
+      </div>
+
+      <div class="filter-group">
+        <label for="providerFilter">Provider:</label>
+        <input 
+          type="text" 
+          id="providerFilter" 
+          [(ngModel)]="providerFilter" 
+          (input)="onFilterChange()"
+          placeholder="e.g., moonpay"
+        >
+      </div>
+
+      <button class="clear-filters-btn" (click)="clearFilters()">
+        Clear Filters
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading transactions...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error && !loading" class="error-state">
+    <p class="error-message">{{ error }}</p>
+    <button (click)="loadTransactions()" class="retry-btn">Retry</button>
+  </div>
+
+  <!-- Transactions List -->
+  <div *ngIf="!loading && !error" class="transactions-content">
+    <!-- Results Summary -->
+    <div class="results-summary">
+      <p>Showing {{ transactions.length }} of {{ totalCount }} transactions</p>
+    </div>
+
+    <!-- Transactions Table -->
+    <div class="transactions-table-container">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount</th>
+            <th>Provider</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions" class="transaction-row">
+            <td class="order-id">{{ transaction.orderId }}</td>
+            <td class="date">{{ formatDate(transaction.createdAt) }}</td>
+            <td class="currency-from">
+              <span class="currency-code">{{ transaction.currencyFrom }}</span>
+            </td>
+            <td class="currency-to">
+              <span class="currency-code">{{ transaction.currencyTo }}</span>
+            </td>
+            <td class="amount">{{ formatAmount(transaction.amountFrom) }}</td>
+            <td class="provider">{{ transaction.providerCode }}</td>
+            <td class="status">
+              <span class="status-badge" [ngClass]="getStatusClass(transaction.status)">
+                {{ transaction.status }}
+              </span>
+            </td>
+            <td class="actions">
+              <button class="view-details-btn" (click)="viewTransactionDetails(transaction)">
+                View Details
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="transactions.length === 0" class="empty-state">
+      <p>No transactions found</p>
+      <p>Try adjusting your filters or create a new order</p>
+    </div>
+
+    <!-- Pagination -->
+    <div *ngIf="totalPages > 1" class="pagination">
+      <button 
+        class="pagination-btn" 
+        [disabled]="!hasPrevPage"
+        (click)="onPageChange(currentPage - 1)"
+      >
+        Previous
+      </button>
+
+      <div class="page-numbers">
+        <button 
+          *ngFor="let page of getPageNumbers()" 
+          class="page-btn"
+          [ngClass]="{ 'active': page === currentPage }"
+          (click)="onPageChange(page)"
+        >
+          {{ page }}
+        </button>
+      </div>
+
+      <button 
+        class="pagination-btn" 
+        [disabled]="!hasNextPage"
+        (click)="onPageChange(currentPage + 1)"
+      >
+        Next
+      </button>
+    </div>
+
+    <!-- Pagination Info -->
+    <div class="pagination-info">
+      <p>Page {{ currentPage }} of {{ totalPages }}</p>
+    </div>
+  </div>
+</div> 

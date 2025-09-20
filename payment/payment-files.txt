@@ -1,0 +1,1262 @@
+tsconfig.json: ({
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolvePackageJsonExports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2023",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false
+  }
+}
+)
+
+tsconfig.build.json : ({
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+}
+)
+
+readme.md : (<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
+
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
+
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+
+## Description
+
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+## Project setup
+
+```bash
+$ npm install
+```
+
+## Compile and run the project
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+## Run tests
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Deployment
+
+When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+
+If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+
+```bash
+$ npm install -g @nestjs/mau
+$ mau deploy
+```
+
+With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+
+## Resources
+
+Check out a few resources that may come in handy when working with NestJS:
+
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+# Changelly API Integration
+
+This is a NestJS backend service that integrates with the Changelly API to provide currency information and exchange services.
+
+## Features
+
+- Fetch all available currencies from Changelly
+- Filter currencies by type (fiat/crypto)
+- Get specific currency details by ticker
+- Modern REST API with proper error handling
+- CORS enabled for frontend integration
+
+## API Endpoints
+
+### Get All Currencies
+```
+GET /currencies
+```
+Returns all available currencies with their details.
+
+### Get Currencies by Type
+```
+GET /currencies/type/:type
+```
+Filter currencies by type. Valid types: `fiat` or `crypto`
+
+### Get Currency by Ticker
+```
+GET /currencies/ticker/:ticker
+```
+Get specific currency details by its ticker symbol.
+
+## Currency Data Structure
+
+Each currency object contains:
+
+```typescript
+{
+  type: 'fiat' | 'crypto',
+  ticker: string,           // Currency ticker (e.g., 'BTC', 'USD')
+  name: string,             // Full currency name
+  iconUrl: string,          // SVG icon URL
+  iconColoredUrl: string,   // Colored PNG icon URL
+  precision: string,        // Decimal precision
+  network?: string,         // Blockchain network (crypto only)
+  protocol?: string,        // Protocol (crypto only)
+  extraIdName?: string,     // Extra ID name (crypto only)
+  providers: any[]          // Available exchange providers
+}
+```
+
+## Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Copy `config.example.ts` to `config.ts` and add your Changelly API credentials:
+```typescript
+export const config = {
+  changelly: {
+    privateKey: 'your-private-key',
+    publicKey: 'your-public-key'
+  }
+};
+```
+
+3. Start the development server:
+```bash
+npm run start:dev
+```
+
+The API will be available at `http://localhost:3000`
+
+## Frontend Integration
+
+The frontend Angular application is configured to communicate with this API. Make sure both applications are running:
+
+- Backend: `http://localhost:3000`
+- Frontend: `http://localhost:4200`
+
+## Error Handling
+
+The API includes comprehensive error handling:
+- Invalid currency types return 400 Bad Request
+- API failures return 500 Internal Server Error
+- Fallback currency data is provided when Changelly API is unavailable
+
+## Development
+
+- Run tests: `npm run test`
+- Run e2e tests: `npm run test:e2e`
+- Build for production: `npm run build`
+)
+
+package.json: ({
+  "name": "changelly-api",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@changelly/fiat-api-sdk-node": "^1.0.3",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/mongoose": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.1",
+    "axios": "^1.11.0",
+    "crypto": "^1.0.1",
+    "mongoose": "^8.0.3",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.18.0",
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.0.1",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.10.7",
+    "@types/supertest": "^6.0.2",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
+    "globals": "^16.0.0",
+    "jest": "^30.0.0",
+    "prettier": "^3.4.2",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
+)
+
+npm : (Enter the absolute path where the nvm-windows zip file is extracted/copied to: )
+
+nest-cli.json : ({
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true
+  }
+}
+)
+
+eslint.config.mjs : (// @ts-check
+import eslint from '@eslint/js';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  {
+    ignores: ['eslint.config.mjs'],
+  },
+  eslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  eslintPluginPrettierRecommended,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+      sourceType: 'commonjs',
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-floating-promises': 'warn',
+      '@typescript-eslint/no-unsafe-argument': 'warn'
+    },
+  },
+);)
+
+config.example.ts : (// Copy this file to config.ts and fill in your actual values
+export const config = {
+  changelly: {
+    privateKey: 'LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRHlHYnluS1RHc1ZzQUEKaVY0VFl0elg2K1NadkhKbW5PaEp4WGJaS1NEQ3RjckpzZlZKRURtL2VqaTlieHlqOFVSWVBhaUxWUzRzaWUxTApVTjRaWkowMk02bFVrcEJjNVN4bHlMaEJ0UExWdTNsUDdyTHJsQjVPbjE4U29qN3RyQlZXVkU0Z2dtZ1BOTzFhCnpJK1lxemc4eEp4UEVzV0VwT2p0QzlQZzM5ZVMxVGxiOUVJQjdBSURQMFhuOE5KT3ZpQ2RqdHFFeGo2alJ3OTIKWVZmMjg2RmtQd2ZKbTgrMzh4ZXVMaGUwbGh2RjRMeW1ncEdEOWRuK3JxVmtyNjJaYXNwRndnenNVZ1FwKzVlVQpOU3ZhNG54TTRac1JOVzVtQnJWaWJWQXpTK2czZVFOeDgvSEJHVk0yOENHaHNNd01uREhHdUpMQXp6em5LRDQwClFtMXJuY3VaQWdNQkFBRUNnZ0VBR2h1cmJBMTF0V09mamc5Q1RXM21hZ1NlNFBOaEZPN0w0QlRDNWRWWkdwWlgKT1p3TzJ5TzhUb2xrTUEyWTlaY1JxMEJ1K2lPaitKcWhNL09UR0FMeEwwU3YrSlpicWlEdXdrVThsWjFwYUtJdwppVzJ3N3RYSTFPcTc2bnNEdFViUEFFSFVNUTVQSVlDd0xoQU1Wa2IwcUJ6OXpFczJjTUVGKzNaQWthb2lDY3Z1CkV5SW1uRzliUzFyWlBrV2JUMnl4ckwybzgvNU5ZbVNjTlJ5YlUvamNOMENPNDdSMjdLc0o4QnVrdGlFRnlrRXYKeVV1eTBPbHA3b0NUNi9lMFVzN1BrbjJsdWJKMzJPejNpOWVNQy9EeVJYaHNUQ0F0WjRFckREUWhCc2RxVlVUMgp4b1l6RlFtTERSS2JLbHFueDVCQW5OdXdZTFk0Tmg3ampDRDgxbndZMXdLQmdRRDRPTDI1bkxzTytnczQ4WmdvCmorQ0hmMHNPYkRnZU1hZFMwRjJOZ015bC8ySjkxbUxNZ3ZzaVJPUTloYlFQMXRrSDQ4MmlmYTQxdkVSWklxelcKb2U3WTFhbDAybmt6eUhsWlFhVzJabTNWck5IaE8wUm9teVdMR1pESVVLSmgyR09OZjh3NDZTZFlXTFBWS2NtbwpPNWRkQnN6czFwaEg4Q3RyS1ppVFVxemwxd0tCZ1FENXIrUkRjWDFqVEgrM0UwSE56YmR2T3N1MnZNYnlFb3FCCjBORm9kYXl3Y2tEMXFrdHg1YUFVY3NhVyt5OStFK2V6elNPcEplUzVnYnN2UjB1Q1IyZElZTklMSnpGZ0lkK0kKMjBKbWRaalBuUldNU050dTRtdmJuV0VodVdPaFZRVjhNZFdvTERySWc5K3JpT3BweFlrSkZqRFM2QW11bDBqNQpzS1p5d2JQTUR3S0JnQTRDamRyVEdNL0FseStRbTBqMnpmSjM0ZEdmbEE5SU9DeDViRDVYWGJXazAzZE15V2pICm44c1FYbDJHbFdJcmV6Wnh5aUo0dTROMjY5aW9GMTlKNW9SQWt2N3djZFRWWk52LzA0MlcvRzRLQWhLWFdNWWEKczZURlBhSEF3MW1JY0I0RmI0NXF3bmkvRU85Z0cyeXVhRjJzeTVZMmlvUE03M1p0ODVtbEdmTWpBb0dCQU1TbwpWdDhQNmpSbHNrbmRydnlMeEtpazVJSi9XU3Fjazk3L081Qk03c0Rpbkd0aHY1NXJ2NU9iZXZLNzBJSTY1MG5rCmp1dlEzcitGZ0lzU1dsUzRMSThEUXl4cHFDZ1JSZUNpNFQrVjY4L0o1NGpnY1lSNmJYMUNEWmprVGFacU1ySEoKQm9FNHBPdjlnaE8yK1BwcURTN00vWk9BRXZBaVUrWGx6cE9nSVI3ZEFvR0JBS200TTR1MjlhOFhnMmJ6ZVIyWQo3eWlTUDI3MGc3TGxXRDdKNXpLdVJMTytxcUtxczV6cEwyU1dReDM0dXJzNzB2SlJSVzBhRlg4MFFQakg3dmJKCmo4ZmJESDNGdjRTelBoRytqSHl1Y0dYWWdXMXhER3NyQVkwSFU4cmNxaStpcXkxQktiNEhpRERiako4cDFTaHAKV05RZHd5Mmt3dzJCRUFmMkQ3QmpEcjVkCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K',
+    publicKey: 'bb7297690c5ff7f6cac751b0ceee9a703e9096fce5f166909a0cf1869bd29557',
+    walletAddress: 'TSh34pfzhJXiBEoKpa4cZ1nmH6Hqm1vTyo',
+  },
+  database: {
+    mongodbUri: 'mongodb://localhost:27017/payment',
+  },
+  server: {
+    port: 3000,
+  },
+};
+
+)
+
+.prettierrc : ({
+  "singleQuote": true,
+  "trailingComma": "all"
+})
+
+.env : (CHANGELLY_API_KEY=bb7297690c5ff7f6cac751b0ceee9a703e9096fce5f166909a0cf1869bd29557
+CHANGELLY_API_SECRET=LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRHlHYnluS1RHc1ZzQUEKaVY0VFl0elg2K1NadkhKbW5PaEp4WGJaS1NEQ3RjckpzZlZKRURtL2VqaTlieHlqOFVSWVBhaUxWUzRzaWUxTApVTjRaWkowMk02bFVrcEJjNVN4bHlMaEJ0UExWdTNsUDdyTHJsQjVPbjE4U29qN3RyQlZXVkU0Z2dtZ1BOTzFhCnpJK1lxemc4eEp4UEVzV0VwT2p0QzlQZzM5ZVMxVGxiOUVJQjdBSURQMFhuOE5KT3ZpQ2RqdHFFeGo2alJ3OTIKWVZmMjg2RmtQd2ZKbTgrMzh4ZXVMaGUwbGh2RjRMeW1ncEdEOWRuK3JxVmtyNjJaYXNwRndnenNVZ1FwKzVlVQpOU3ZhNG54TTRac1JOVzVtQnJWaWJWQXpTK2czZVFOeDgvSEJHVk0yOENHaHNNd01uREhHdUpMQXp6em5LRDQwClFtMXJuY3VaQWdNQkFBRUNnZ0VBR2h1cmJBMTF0V09mamc5Q1RXM21hZ1NlNFBOaEZPN0w0QlRDNWRWWkdwWlgKT1p3TzJ5TzhUb2xrTUEyWTlaY1JxMEJ1K2lPaitKcWhNL09UR0FMeEwwU3YrSlpicWlEdXdrVThsWjFwYUtJdwppVzJ3N3RYSTFPcTc2bnNEdFViUEFFSFVNUTVQSVlDd0xoQU1Wa2IwcUJ6OXpFczJjTUVGKzNaQWthb2lDY3Z1CkV5SW1uRzliUzFyWlBrV2JUMnl4ckwybzgvNU5ZbVNjTlJ5YlUvamNOMENPNDdSMjdLc0o4QnVrdGlFRnlrRXYKeVV1eTBPbHA3b0NUNi9lMFVzN1BrbjJsdWJKMzJPejNpOWVNQy9EeVJYaHNUQ0F0WjRFckREUWhCc2RxVlVUMgp4b1l6RlFtTERSS2JLbHFueDVCQW5OdXdZTFk0Tmg3ampDRDgxbndZMXdLQmdRRDRPTDI1bkxzTytnczQ4WmdvCmorQ0hmMHNPYkRnZU1hZFMwRjJOZ015bC8ySjkxbUxNZ3ZzaVJPUTloYlFQMXRrSDQ4MmlmYTQxdkVSWklxelcKb2U3WTFhbDAybmt6eUhsWlFhVzJabTNWck5IaE8wUm9teVdMR1pESVVLSmgyR09OZjh3NDZTZFlXTFBWS2NtbwpPNWRkQnN6czFwaEg4Q3RyS1ppVFVxemwxd0tCZ1FENXIrUkRjWDFqVEgrM0UwSE56YmR2T3N1MnZNYnlFb3FCCjBORm9kYXl3Y2tEMXFrdHg1YUFVY3NhVyt5OStFK2V6elNPcEplUzVnYnN2UjB1Q1IyZElZTklMSnpGZ0lkK0kKMjBKbWRaalBuUldNU050dTRtdmJuV0VodVdPaFZRVjhNZFdvTERySWc5K3JpT3BweFlrSkZqRFM2QW11bDBqNQpzS1p5d2JQTUR3S0JnQTRDamRyVEdNL0FseStRbTBqMnpmSjM0ZEdmbEE5SU9DeDViRDVYWGJXazAzZE15V2pICm44c1FYbDJHbFdJcmV6Wnh5aUo0dTROMjY5aW9GMTlKNW9SQWt2N3djZFRWWk52LzA0MlcvRzRLQWhLWFdNWWEKczZURlBhSEF3MW1JY0I0RmI0NXF3bmkvRU85Z0cyeXVhRjJzeTVZMmlvUE03M1p0ODVtbEdmTWpBb0dCQU1TbwpWdDhQNmpSbHNrbmRydnlMeEtpazVJSi9XU3Fjazk3L081Qk03c0Rpbkd0aHY1NXJ2NU9iZXZLNzBJSTY1MG5rCmp1dlEzcitGZ0lzU1dsUzRMSThEUXl4cHFDZ1JSZUNpNFQrVjY4L0o1NGpnY1lSNmJYMUNEWmprVGFacU1ySEoKQm9FNHBPdjlnaE8yK1BwcURTN00vWk9BRXZBaVUrWGx6cE9nSVI3ZEFvR0JBS200TTR1MjlhOFhnMmJ6ZVIyWQo3eWlTUDI3MGc3TGxXRDdKNXpLdVJMTytxcUtxczV6cEwyU1dReDM0dXJzNzB2SlJSVzBhRlg4MFFQakg3dmJKCmo4ZmJESDNGdjRTelBoRytqSHl1Y0dYWWdXMXhER3NyQVkwSFU4cmNxaStpcXkxQktiNEhpRERiako4cDFTaHAKV05RZHd5Mmt3dzJCRUFmMkQ3QmpEcjVkCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K)
+
+test/app.e2e-spec.ts : (import { Test, TestingModule } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
+import * as request from 'supertest';
+import { App } from 'supertest/types';
+import { AppModule } from './../src/app.module';
+
+describe('AppController (e2e)', () => {
+  let app: INestApplication<App>;
+
+  beforeEach(async () => {
+    const moduleFixture: TestingModule = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile();
+
+    app = moduleFixture.createNestApplication();
+    await app.init();
+  });
+
+  it('/ (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/')
+      .expect(200)
+      .expect('Hello World!');
+  });
+});
+)
+
+test/jest-e2e.json : ({
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  }
+}
+)
+src/changelly/.changelly.service.ts : (import axios from 'axios';
+import * as crypto from 'crypto';
+
+const apiKey = process.env.CHANGELLY_API_KEY;
+const apiSecret = process.env.CHANGELLY_API_SECRET;
+const apiUrl = 'https://api.changelly.com';
+
+export async function getCurrencies() {
+  const message = {
+    jsonrpc: '2.0',
+    id: 'test',
+    method: 'getCurrencies',
+    params: {}
+  };
+
+  const sign = crypto
+    .createHmac('sha512', apiSecret as string)
+    .update(JSON.stringify(message))
+    .digest('hex');
+
+  const headers = {
+    'api-key': apiKey,
+    sign,
+    'Content-type': 'application/json'
+  };
+
+  const { data } = await axios.post(apiUrl, message, { headers });
+  return data;
+})
+src/changelly/estimate.ts : ()
+src/currencies/schemas/transaction.schema.ts : (import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
+
+export type TransactionDocument = Transaction & Document;
+
+@Schema({ timestamps: true })
+export class Transaction {
+  @Prop({ required: true })
+  orderId: string;
+
+  @Prop({ required: true })
+  externalUserId: string;
+
+  @Prop({ required: true })
+  externalOrderId: string;
+
+  @Prop({ required: true })
+  providerCode: string;
+
+  @Prop({ required: true })
+  currencyFrom: string;
+
+  @Prop({ required: true })
+  currencyTo: string;
+
+  @Prop({ required: true })
+  amountFrom: string;
+
+  @Prop({ required: true })
+  country: string;
+
+  @Prop()
+  state?: string;
+
+  @Prop()
+  ip?: string;
+
+  @Prop({ required: true })
+  walletAddress: string;
+
+  @Prop()
+  walletExtraId?: string;
+
+  @Prop({ required: true })
+  paymentMethod: string;
+
+  @Prop()
+  userAgent?: string;
+
+  @Prop({ type: Object })
+  metadata?: any;
+
+  @Prop()
+  redirectUrl?: string;
+
+  @Prop({ required: true, default: 'pending' })
+  status: string;
+
+  @Prop()
+  errorType?: string;
+
+  @Prop()
+  errorMessage?: string;
+
+  @Prop({ type: [Object] })
+  errorDetails?: any[];
+
+  @Prop()
+  createdAt?: Date;
+
+  @Prop()
+  updatedAt?: Date;
+}
+
+export const TransactionSchema = SchemaFactory.createForClass(Transaction); )
+
+src/currencies/currencies.controller.ts : (import { Controller, Get, Post, Body, Param, HttpException, HttpStatus, Query } from '@nestjs/common';
+import { CurrenciesService, Currency, PaymentMethod } from './currencies.service';
+
+interface CreateOrderDto {
+  currencyCode: string;
+  paymentMethodCode: string;
+  providerCode: string;
+  amount: string;
+}
+
+interface CallbackDto {
+  orderId: string;
+  status: string;
+  transactionHash?: string;
+  completedAt?: string;
+  additionalData?: any;
+}
+
+@Controller('currencies')
+export class CurrenciesController {
+  constructor(private readonly currenciesService: CurrenciesService) {}
+
+  @Get()
+  async getCurrencies(): Promise<Currency[]> {
+    try {
+      return await this.currenciesService.getCurrencies();
+    } catch (error) {
+      throw new HttpException(
+        'Failed to fetch currencies',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Get('payment-methods')
+  async getPaymentMethods(): Promise<PaymentMethod[]> {
+    try {
+      return await this.currenciesService.getPaymentMethods();
+    } catch (error) {
+      throw new HttpException(
+        'Failed to fetch payment methods',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Post('create-order')
+  async createOrder(@Body() createOrderDto: CreateOrderDto): Promise<any> {
+    try {
+      return await this.currenciesService.createOrder(createOrderDto);
+    } catch (error) {
+      throw new HttpException(
+        'Failed to create order',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Post('callback')
+  async handleCallback(@Body() callbackDto: CallbackDto): Promise<any> {
+    try {
+      this.currenciesService.logInfo('Received callback from Changelly:', callbackDto);
+      return await this.currenciesService.updateTransactionStatus(callbackDto.orderId, {
+        status: callbackDto.status,
+        additionalData: {
+          transactionHash: callbackDto.transactionHash,
+          completedAt: callbackDto.completedAt,
+          ...callbackDto.additionalData
+        }
+      });
+    } catch (error) {
+      this.currenciesService.logError('Error handling callback:', error);
+      throw new HttpException(
+        'Failed to process callback',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Get('transactions')
+  async getTransactions(
+    @Query('page') page: string = '1',
+    @Query('limit') limit: string = '10',
+    @Query('status') status?: string,
+    @Query('currencyFrom') currencyFrom?: string,
+    @Query('providerCode') providerCode?: string
+  ): Promise<any> {
+    try {
+      const pageNum = parseInt(page, 10);
+      const limitNum = parseInt(limit, 10);
+      
+      return await this.currenciesService.getTransactions({
+        page: pageNum,
+        limit: limitNum,
+        status,
+        currencyFrom,
+        providerCode
+      });
+    } catch (error) {
+      throw new HttpException(
+        'Failed to fetch transactions',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Get('transactions/:orderId')
+  async getTransactionById(@Param('orderId') orderId: string): Promise<any> {
+    try {
+      return await this.currenciesService.getTransactionById(orderId);
+    } catch (error) {
+      throw new HttpException(
+        'Failed to fetch transaction',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Get('type/:type')
+  async getCurrenciesByType(@Param('type') type: string): Promise<Currency[]> {
+    try {
+      if (type !== 'fiat' && type !== 'crypto') {
+        throw new HttpException(
+          'Invalid currency type. Must be "fiat" or "crypto"',
+          HttpStatus.BAD_REQUEST,
+        );
+      }
+      return await this.currenciesService.getCurrenciesByType(type as 'fiat' | 'crypto');
+    } catch (error) {
+      if (error instanceof HttpException) {
+        throw error;
+      }
+      throw new HttpException(
+        'Failed to fetch currencies by type',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+
+  @Get('ticker/:ticker')
+  async getCurrencyByTicker(@Param('ticker') ticker: string): Promise<Currency | null> {
+    try {
+      return await this.currenciesService.getCurrencyByTicker(ticker.toUpperCase());
+    } catch (error) {
+      throw new HttpException(
+        'Failed to fetch currency by ticker',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
+}
+
+)
+
+src/currencies/currencies.module.ts : (import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { CurrenciesController } from './currencies.controller';
+import { CurrenciesService } from './currencies.service';
+import { Transaction, TransactionSchema } from './schemas/transaction.schema';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([
+      { name: Transaction.name, schema: TransactionSchema }
+    ])
+  ],
+  controllers: [CurrenciesController],
+  providers: [CurrenciesService],
+})
+export class CurrenciesModule {}
+
+)
+
+src/currencies/currencies.service.ts : (import { Injectable, Logger } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { ChangellyCurrency, ChangellyFiatClient } from '@changelly/fiat-api-sdk-node';
+import { config } from '../../config.example';
+import { Transaction, TransactionDocument } from './schemas/transaction.schema';
+
+export interface Currency {
+  type: 'fiat' | 'crypto';
+  ticker: string;
+  name: string;
+  iconUrl: string;
+  iconColoredUrl: string;
+  precision: string;
+  network?: string;
+  protocol?: string;
+  extraIdName?: string | null;
+  providers: any[];
+}
+
+export interface PaymentMethod {
+  parameterValue: string;
+  description: string;
+}
+
+interface CreateOrderDto {
+  currencyCode: string;
+  paymentMethodCode: string;
+  providerCode: string;
+  amount: string;
+}
+
+@Injectable()
+export class CurrenciesService {
+  private readonly logger = new Logger(CurrenciesService.name);
+  private client: ChangellyFiatClient;
+
+  constructor(
+    @InjectModel(Transaction.name) private transactionModel: Model<TransactionDocument>
+  ) {
+    // Initialize Changelly client with config values
+    this.client = new ChangellyFiatClient({
+      privateKey: config.changelly.privateKey,
+      publicKey: config.changelly.publicKey,
+    });
+  }
+
+  // Payment methods data
+  private readonly paymentMethods: PaymentMethod[] = [
+    { parameterValue: 'card', description: 'Card payments, e.g. Visa/Mastercard' },
+    { parameterValue: 'IDEAL', description: 'iDEAL' },
+    { parameterValue: 'gbp_bank_transfer', description: 'UKFP' },
+    { parameterValue: 'sepa_bank_transfer', description: 'SEPA' },
+    { parameterValue: 'apple_pay', description: 'Apple Pay / Google Pay' },
+    { parameterValue: 'yellow_card_bank_transfer', description: 'Local bank transfer' },
+    { parameterValue: 'pix', description: 'PIX' },
+    { parameterValue: 'pay_id', description: 'PayID' },
+    { parameterValue: 'pay_pal', description: 'PayPal' },
+    { parameterValue: 'skrill', description: 'Skrill Balance' },
+    { parameterValue: 'spei', description: 'SPEI' },
+    { parameterValue: 'oxxo', description: 'Oxxo' },
+    { parameterValue: 'astro_pay', description: 'AstroPay' },
+    { parameterValue: 'ach', description: 'ACH' }
+  ];
+
+  async getCurrencies(): Promise<Currency[]> {
+    try {
+      
+      // Get available currencies from Changelly
+      const currencies = await this.client.getCurrencyList({
+        type: ChangellyCurrency.Fiat,
+      });
+
+      
+      // Transform the response to match our interface
+      const transformedCurrencies: Currency[] = currencies.map((currency: any) => ({
+        type: currency.type,
+        ticker: currency.ticker,
+        name: currency.name,
+        iconUrl: currency.iconUrl,
+        iconColoredUrl: currency.iconColoredUrl,
+        precision: currency.precision,
+        network: currency.network,
+        protocol: currency.protocol,
+        extraIdName: currency.extraIdName,
+        providers: currency.providers || []
+      }));
+      
+      // Filter currencies that have providers with "sell" in supportedFlows
+      const currenciesWithSellFlow = transformedCurrencies.filter(currency => {
+        return currency.providers.some(provider => 
+          provider.supportedFlows && 
+          provider.supportedFlows.includes('sell')
+        );
+      });
+      
+      return currenciesWithSellFlow;
+      
+    } catch (error) {
+      this.logger.error('Error fetching currencies from Changelly API', error);
+      
+      // Return a fallback list of common currencies if API fails
+      return this.getFallbackCurrencies();
+    }
+  }
+
+  async getPaymentMethods(): Promise<PaymentMethod[]> {
+    return this.paymentMethods;
+  }
+
+  async createOrder(createOrderDto: CreateOrderDto): Promise<any> {
+    try {
+
+      // Merge frontend parameters with required Changelly order data
+      const orderData = {
+        returnSuccessUrl: "http://helloworkd.com/",
+        returnFailedUrl: "http://helloworkd.com/",
+        orderId: "5154302e-3stl-75p4",
+        externalUserId: "122hd",
+        externalOrderId: "71ahw34",
+        providerCode: createOrderDto.providerCode as any, // Cast to any to handle provider code
+        currencyFrom: createOrderDto.currencyCode,
+        currencyTo: "USDTRX", // You might want to make this configurable
+        amountFrom: `${createOrderDto.amount}`,
+        country: "PH",
+        state: undefined,
+        ip: undefined,
+        walletAddress: config.changelly.walletAddress,
+        walletExtraId: undefined,
+        paymentMethod: createOrderDto.paymentMethodCode as any, // Cast to any to handle payment method
+        userAgent: undefined,
+        metadata: undefined,
+      };
+
+      // Call Changelly createOrder method
+      const result = await this.client.createOrder(orderData) as any;
+      console.log("==========orderData==========");
+      console.log(orderData);
+      console.log("==========result==========");
+      console.log(result);
+      
+      // Save transaction to database
+      await this.saveTransaction(orderData, result);
+
+      // Check if the response contains an error
+      if (result.errorType) {
+        return {
+          success: false,
+          error: {
+            type: result.errorType,
+            message: result.errorMessage,
+            details: result.errorDetails
+          }
+        };
+      }
+
+      // If successful, return the redirect URL
+      if (result.redirectUrl) {
+        return {
+          success: true,
+          redirectUrl: result.redirectUrl,
+          orderDetails: result
+        };
+      }
+
+      // Fallback response
+      return {
+        success: true,
+        orderDetails: result
+      };
+
+    } catch (error) {
+      this.logger.error('Error creating order:', error);
+      
+      // Handle specific Changelly API errors
+      if (error.response && error.response.data) {
+        return {
+          success: false,
+          error: {
+            type: error.response.data.errorType || 'api_error',
+            message: error.response.data.errorMessage || 'API request failed',
+            details: error.response.data.errorDetails || error.message
+          }
+        };
+      }
+      
+      return {
+        success: false,
+        error: {
+          type: 'api_error',
+          message: 'Failed to create order',
+          details: error.message || 'Unknown error occurred'
+        }
+      };
+    }
+  }
+
+  private async saveTransaction(orderData: any, result: any): Promise<void> {
+    try {
+      const transactionData = {
+        orderId: orderData.orderId,
+        externalUserId: orderData.externalUserId,
+        externalOrderId: orderData.externalOrderId,
+        providerCode: orderData.providerCode,
+        currencyFrom: orderData.currencyFrom,
+        currencyTo: orderData.currencyTo,
+        amountFrom: orderData.amountFrom,
+        country: orderData.country,
+        state: orderData.state,
+        ip: orderData.ip,
+        walletAddress: orderData.walletAddress,
+        walletExtraId: orderData.walletExtraId,
+        paymentMethod: orderData.paymentMethod,
+        userAgent: orderData.userAgent,
+        metadata: orderData.metadata,
+        redirectUrl: result.redirectUrl,
+        status: result.errorType ? 'failed' : 'pending',
+        errorType: result.errorType,
+        errorMessage: result.errorMessage,
+        errorDetails: result.errorDetails,
+      };
+
+      const transaction = new this.transactionModel(transactionData);
+      await transaction.save();
+      
+    } catch (error) {
+      this.logger.error('Error saving transaction to database:', error);
+    }
+  }
+
+  async updateTransactionStatus(orderId: string, updateStatusDto: any): Promise<any> {
+    try {
+
+      const updateData: any = {
+        status: updateStatusDto.status,
+        updatedAt: new Date()
+      };
+
+      // Add additional data if provided
+      if (updateStatusDto.additionalData) {
+        Object.assign(updateData, updateStatusDto.additionalData);
+      }
+
+      const updatedTransaction = await this.transactionModel.findOneAndUpdate(
+        { orderId: orderId },
+        updateData,
+        { new: true }
+      );
+
+      if (!updatedTransaction) {
+        this.logger.warn(`Transaction not found for orderId: ${orderId}`);
+        return {
+          success: false,
+          error: {
+            type: 'not_found',
+            message: 'Transaction not found'
+          }
+        };
+      }
+
+      return {
+        success: true,
+        transaction: updatedTransaction
+      };
+
+    } catch (error) {
+      this.logger.error('Error updating transaction status:', error);
+      return {
+        success: false,
+        error: {
+          type: 'update_error',
+          message: 'Failed to update transaction status',
+          details: error.message || 'Unknown error occurred'
+        }
+      };
+    }
+  }
+
+  // Public logging methods for controller access
+  logInfo(message: string, context?: any): void {
+    this.logger.log(message, context);
+  }
+
+  logError(message: string, error?: any): void {
+    this.logger.error(message, error);
+  }
+
+  async getTransactions(filters: {
+    page: number;
+    limit: number;
+    status?: string;
+    currencyFrom?: string;
+    providerCode?: string;
+  }): Promise<any> {
+    try {
+      this.logger.log('Fetching transactions with filters:', filters);
+
+      // Build query filter
+      const queryFilter: any = {};
+      
+      if (filters.status) {
+        queryFilter.status = filters.status;
+      }
+      
+      if (filters.currencyFrom) {
+        queryFilter.currencyFrom = filters.currencyFrom.toUpperCase();
+      }
+      
+      if (filters.providerCode) {
+        queryFilter.providerCode = filters.providerCode;
+      }
+
+      // Calculate skip for pagination
+      const skip = (filters.page - 1) * filters.limit;
+
+      // Get total count for pagination
+      const totalCount = await this.transactionModel.countDocuments(queryFilter);
+
+      // Get transactions with pagination and sorting (newest first)
+      const transactions = await this.transactionModel
+        .find(queryFilter)
+        .sort({ createdAt: -1 }) // Sort by newest first
+        .skip(skip)
+        .limit(filters.limit)
+        .lean(); // Convert to plain JavaScript objects
+
+      // Calculate pagination info
+      const totalPages = Math.ceil(totalCount / filters.limit);
+      const hasNextPage = filters.page < totalPages;
+      const hasPrevPage = filters.page > 1;
+
+      this.logger.log(`Found ${transactions.length} transactions out of ${totalCount} total`);
+
+      return {
+        success: true,
+        data: {
+          transactions,
+          pagination: {
+            currentPage: filters.page,
+            totalPages,
+            totalCount,
+            limit: filters.limit,
+            hasNextPage,
+            hasPrevPage
+          }
+        }
+      };
+
+    } catch (error) {
+      this.logger.error('Error fetching transactions:', error);
+      return {
+        success: false,
+        error: {
+          type: 'fetch_error',
+          message: 'Failed to fetch transactions',
+          details: error.message || 'Unknown error occurred'
+        }
+      };
+    }
+  }
+
+  async getTransactionById(orderId: string): Promise<any> {
+    try {
+      this.logger.log(`Fetching transaction by orderId: ${orderId}`);
+
+      const transaction = await this.transactionModel
+        .findOne({ orderId: orderId })
+        .lean();
+
+      if (!transaction) {
+        this.logger.warn(`Transaction not found for orderId: ${orderId}`);
+        return {
+          success: false,
+          error: {
+            type: 'not_found',
+            message: 'Transaction not found'
+          }
+        };
+      }
+
+      this.logger.log('Transaction found successfully');
+      return {
+        success: true,
+        data: transaction
+      };
+
+    } catch (error) {
+      this.logger.error('Error fetching transaction by ID:', error);
+      return {
+        success: false,
+        error: {
+          type: 'fetch_error',
+          message: 'Failed to fetch transaction',
+          details: error.message || 'Unknown error occurred'
+        }
+      };
+    }
+  }
+
+  async getCurrenciesByType(type: 'fiat' | 'crypto'): Promise<Currency[]> {
+    const allCurrencies = await this.getCurrencies();
+    return allCurrencies.filter(currency => currency.type === type);
+  }
+
+  async getCurrencyByTicker(ticker: string): Promise<Currency | null> {
+    const allCurrencies = await this.getCurrencies();
+    return allCurrencies.find(currency => currency.ticker === ticker) || null;
+  }
+
+  private getFallbackCurrencies(): Currency[] {
+    return [
+      {
+        type: 'fiat',
+        ticker: 'USD',
+        name: 'US Dollar',
+        iconUrl: 'https://cdn.changelly.com/icons/usd.svg',
+        iconColoredUrl: 'https://cdn.changelly.com/icons-colored/usd.png',
+        precision: '2',
+        providers: [
+          {
+            providerCode: 'moonpay',
+            supportedFlows: ['buy', 'sell'],
+            limits: { send: {} }
+          }
+        ]
+      },
+      {
+        type: 'fiat',
+        ticker: 'EUR',
+        name: 'Euro',
+        iconUrl: 'https://cdn.changelly.com/icons/eur.svg',
+        iconColoredUrl: 'https://cdn.changelly.com/icons-colored/eur.png',
+        precision: '2',
+        providers: [
+          {
+            providerCode: 'moonpay',
+            supportedFlows: ['buy', 'sell'],
+            limits: { send: {} }
+          }
+        ]
+      },
+      {
+        type: 'crypto',
+        ticker: 'BTC',
+        name: 'Bitcoin',
+        iconUrl: 'https://cdn.changelly.com/icons/btc.svg',
+        iconColoredUrl: 'https://cdn.changelly.com/icons-colored/btc.png',
+        precision: '8',
+        network: 'bitcoin',
+        protocol: 'BTC',
+        extraIdName: null,
+        providers: [
+          {
+            providerCode: 'moonpay',
+            supportedFlows: ['buy', 'sell'],
+            limits: { send: {} }
+          }
+        ]
+      },
+      {
+        type: 'crypto',
+        ticker: 'ETH',
+        name: 'Ethereum',
+        iconUrl: 'https://cdn.changelly.com/icons/eth.svg',
+        iconColoredUrl: 'https://cdn.changelly.com/icons-colored/eth.png',
+        precision: '8',
+        network: 'ethereum',
+        protocol: 'ETH',
+        extraIdName: null,
+        providers: [
+          {
+            providerCode: 'moonpay',
+            supportedFlows: ['buy', 'sell'],
+            limits: { send: {} }
+          }
+        ]
+      }
+    ];
+  }
+}
+)
+
+src/app.controller.spec.ts : (import { Test, TestingModule } from '@nestjs/testing';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+
+describe('AppController', () => {
+  let appController: AppController;
+
+  beforeEach(async () => {
+    const app: TestingModule = await Test.createTestingModule({
+      controllers: [AppController],
+      providers: [AppService],
+    }).compile();
+
+    appController = app.get<AppController>(AppController);
+  });
+
+  describe('root', () => {
+    it('should return "Hello World!"', () => {
+      expect(appController.getHello()).toBe('Hello World!');
+    });
+  });
+});
+)
+
+src/app.controller.ts : (import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
+
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) {}
+
+  @Get()
+  getHello() {
+    return this.appService.getHello();
+  }
+})
+
+src/app.module.ts : (import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { CurrenciesModule } from './currencies/currencies.module';
+import { config } from '../config.example';
+
+@Module({
+  imports: [
+    MongooseModule.forRoot(config.database.mongodbUri),
+    CurrenciesModule
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
+)
+
+src/app.service.ts : (import { Injectable } from '@nestjs/common';
+import { getCurrencies } from './changelly/changelly.service';
+
+@Injectable()
+export class AppService {
+  async getHello(): Promise<any> {
+    const result = await getCurrencies();
+    return result;
+  }
+})
+
+src/main.ts : (import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  
+  // Enable CORS for frontend communication
+  app.enableCors({
+    origin: 'http://localhost:4200', // Angular default port
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
+  
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+  console.log(`Application is running on: http://localhost:${port}`);
+}
+bootstrap();
+)
+

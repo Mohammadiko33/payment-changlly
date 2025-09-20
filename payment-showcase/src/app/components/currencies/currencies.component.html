@@ -1,0 +1,160 @@
+<div class="currencies-container">
+  <h2>Select Currency</h2>
+  
+  <div class="currency-selector">
+    <label for="currencySelect">Choose a currency:</label>
+    
+    <select 
+      id="currencySelect" 
+      name="currencySelect" 
+      [(ngModel)]="selectedCurrency"
+      (change)="onCurrencyChange()"
+      [disabled]="loading"
+      class="currency-dropdown">
+      
+      <option value="">-- Select Currency --</option>
+      <option 
+        *ngFor="let currency of currencies" 
+        [value]="currency.ticker"
+        class="currency-option">
+        {{ currency.name }} ({{ currency.ticker }})
+      </option>
+    </select>
+  </div>
+
+  <!-- Provider Selection -->
+  <div class="provider-selector" *ngIf="selectedCurrency && availableProviders.length > 0">
+    <label for="providerSelect">Choose a provider:</label>
+    
+    <select 
+      id="providerSelect" 
+      name="providerSelect" 
+      [(ngModel)]="selectedProvider"
+      (change)="onProviderChange()"
+      class="provider-dropdown">
+      
+      <option value="">-- Select Provider --</option>
+      <option 
+        *ngFor="let provider of availableProviders" 
+        [value]="provider.providerCode"
+        class="provider-option">
+        {{ getProviderDisplayName(provider) }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Payment Method Selection -->
+  <div class="payment-method-selector" *ngIf="selectedProvider && paymentMethods.length > 0">
+    <label for="paymentMethodSelect">Choose a payment method:</label>
+    
+    <select 
+      id="paymentMethodSelect" 
+      name="paymentMethodSelect" 
+      [(ngModel)]="selectedPaymentMethod"
+      (change)="onPaymentMethodChange()"
+      class="payment-method-dropdown">
+      
+      <option value="">-- Select Payment Method --</option>
+      <option 
+        *ngFor="let method of paymentMethods" 
+        [value]="method.parameterValue"
+        class="payment-method-option">
+        {{ method.description }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Amount Input -->
+  <div class="amount-selector" *ngIf="selectedPaymentMethod">
+    <label for="amountInput">Enter amount:</label>
+    
+    <input 
+      type="number" 
+      id="amountInput" 
+      name="amountInput" 
+      [(ngModel)]="amount"
+      (input)="onAmountChange()"
+      placeholder="Enter amount..."
+      min="0"
+      step="0.01"
+      class="amount-input">
+  </div>
+
+  <!-- Process Button -->
+  <div class="process-section" *ngIf="isFormReady()">
+    <button 
+      (click)="processOrder()"
+      [disabled]="processing"
+      class="process-btn">
+      <span *ngIf="!processing">Process Order</span>
+      <span *ngIf="processing">Processing...</span>
+    </button>
+  </div>
+
+  <!-- Loading state -->
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading currencies...</p>
+  </div>
+
+  <!-- Error state -->
+  <div *ngIf="error" class="error">
+    <div class="error-header">
+      <h3>⚠️ Order Creation Failed</h3>
+    </div>
+    <div class="error-content">
+      <p class="error-message">{{ error }}</p>
+      <div class="error-actions">
+        <button (click)="clearError()" class="clear-error-btn">Clear Error</button>
+        <button (click)="loadCurrencies()" class="retry-btn">Retry</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected currency info -->
+  <div *ngIf="selectedCurrency && !loading" class="selected-info">
+    <h3>Selected Currency</h3>
+    <p><strong>Code:</strong> {{ selectedCurrency }}</p>
+    <p *ngIf="getSelectedCurrencyDetails()">
+      <strong>Name:</strong> {{ getSelectedCurrencyDetails()?.name }}
+    </p>
+    <p *ngIf="availableProviders.length > 0">
+      <strong>Available Providers:</strong> {{ availableProviders.length }}
+    </p>
+  </div>
+
+  <!-- Selected provider info -->
+  <div *ngIf="selectedProvider && !loading" class="selected-info">
+    <h3>Selected Provider</h3>
+    <p><strong>Provider Code:</strong> {{ selectedProvider }}</p>
+    <p><strong>Provider Name:</strong> {{ selectedProvider.toUpperCase() }}</p>
+    <p *ngIf="getSupportedFlowsString()">
+      <strong>Supported Flows:</strong> {{ getSupportedFlowsString() }}
+    </p>
+  </div>
+
+  <!-- Selected payment method info -->
+  <div *ngIf="selectedPaymentMethod && !loading" class="selected-info">
+    <h3>Selected Payment Method</h3>
+    <p><strong>Payment Method Code:</strong> {{ selectedPaymentMethod }}</p>
+    <p *ngIf="getSelectedPaymentMethodDetails()">
+      <strong>Description:</strong> {{ getSelectedPaymentMethodDetails()?.description }}
+    </p>
+  </div>
+
+  <!-- Amount info -->
+  <div *ngIf="amount && !loading" class="selected-info">
+    <h3>Amount</h3>
+    <p><strong>Amount:</strong> {{ amount }}</p>
+  </div>
+
+  <!-- Complete selection summary -->
+  <div *ngIf="isFormReady() && !loading" class="selected-info">
+    <h3>Complete Selection Summary</h3>
+    <p><strong>Currency:</strong> {{ selectedCurrency }} - {{ getSelectedCurrencyDetails()?.name }}</p>
+    <p><strong>Provider:</strong> {{ selectedProvider.toUpperCase() }}</p>
+    <p><strong>Payment Method:</strong> {{ getSelectedPaymentMethodDetails()?.description }}</p>
+    <p><strong>Amount:</strong> {{ amount }}</p>
+  </div>
+</div>
+
